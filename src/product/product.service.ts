@@ -12,7 +12,7 @@ export class ProductService {
     return [
       {name:"product1",price:45},
       { name: "product2", price: 50 },
-      { name: "product3", price: 66},
+      { name: "product3", price: 86},
     ];
   }
     
