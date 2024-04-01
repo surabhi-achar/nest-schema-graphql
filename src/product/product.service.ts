@@ -5,27 +5,32 @@ import { UpdateProductInput } from './dto/update-product.input';
 @Injectable()
 export class ProductService {
   create(createProductInput: CreateProductInput) {
-    return 'This action adds a new product';
+    return {
+      id: 1, 
+      ...createProductInput,
+    };
   }
 
-  findAll(){
+  findAll() {
     return [
-      {name:"product1",price:45},
-      { name: "product2", price: 50 },
-      { name: "product3", price: 86},
+      { id: 1, name: "product1", price: 45 },
+      { id: 2, name: "product2", price: 50 },
+      { id: 3, name: "product3", price: 86 },
     ];
   }
-    
 
   findOne(id: number) {
-    return `This action returns a #${id} product`;
+    return { id, name: "Product", price: 100 };
   }
 
   update(id: number, updateProductInput: UpdateProductInput) {
-    return `This action updates a #${id} product`;
+    return {
+      id,
+      ...updateProductInput,
+    };
   }
 
   remove(id: number) {
-    return `This action removes a #${id} product`;
+    return { id, name: "Deleted Product", price: 0 };
   }
 }
